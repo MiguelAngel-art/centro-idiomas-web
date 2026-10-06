@@ -1,12 +1,25 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Navbar } from './components/navbar/navbar';
+import { Nosotros } from './components/nosotros/nosotros';
+import { Idiomas } from './components/idiomas/idiomas';
+import { Niveles } from './components/niveles/niveles';
+import { Informacion } from './components/informacion/informacion';
+import { Footer } from './components/footer/footer';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
+  standalone: true,
+  imports: [
+    Navbar,
+    Nosotros,
+    Idiomas,
+    Niveles,
+    Informacion,
+    Footer
+  ],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('centro-idiomas-app');
+export class AppComponent {
+  title = 'centro-idiomas-app';
 }
